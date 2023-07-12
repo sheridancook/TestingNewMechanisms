@@ -1,0 +1,15 @@
+{
+    "package-id": "ca.example.test",
+    "title": "Testing New Mechanism Guide",
+    "canonical": "http://example.org/fhir",
+    "introduction": "An initial proposal for a pan-Canadian set of patient summary profiles",
+    "list": [
+        {
+            "version": "current",
+            "desc": "Continuous Integration Build (latest in version control)",
+            "path": "http://build.fhir.org/ig/example.org/ca.example.test",
+            "status": "ci-build",
+            "current": true
+        }
+    ]
+}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input/schemas/fhir-single.xsd">
+  <id value="ca.example.test"/>
+  <url value="http://example.org/fhir"/>
+  <version value="1.0.0"/>
+  <name value="Test Guide"/>
+  <title value="Example Guide for Testing New FHIR Profiling Mechanisms"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2023-07-13T01:23:00-08:00"/>
+  <description value="This guide is intended to be an environment for testing and troubleshooting "/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CA"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="ca.example.test"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="ips">
+    <uri value="http://hl7.org/fhir/uv/ips/ImplementationGuide/hl7.fhir.uv.ips"/>
+    <packageId value="hl7.fhir.uv.ips"/>
+    <version value="1.1.0"/>
+  </dependsOn>
+  <definition>
+    <grouping id="conformance">
+      <name value="Capability Statements"/>
+      <description value="Capabilities of systems claiming to be conformant to the implementation guide"/>
+    </grouping>
+    <grouping id="profiles">
+      <name value="Profiles"/>
+      <description value="Constraints on FHIR resources to be adhered to as part of the implementation guide"/>
+    </grouping>
+    <grouping id="datatypes">
+      <name value="Data Type Profiles"/>
+      <description value="Constraints on FHIR datatypes to be adhered to as part of the implementation guide"/>
+    </grouping>
+    <grouping id="extensions">
+      <name value="Extensions"/>
+      <description value="Extensions defined as part of the implementation guide"/>
+    </grouping>
+    <grouping id="terminology">
+      <name value="Terminology"/>
+      <description value="ValueSets (and Code Systems) defined for use within the implementation guide"/>
+    </grouping>
+    <!--    <grouping id="operations">
+      <name value="Operation Definitions"/>
+      <description value="Additional operations defined for use within the implementation guide"/>
+    </grouping>
+    <grouping id="search">
+      <name value="Search Parameters"/>
+      <description value="Additional search parameters defined for use within the implementation guide"/>
+    </grouping>-->
+    <grouping id="examples">
+      <name value="Example(s)"/>
+      <description value="Examples showing the use of the profiles"/>
+    </grouping>
+      <resource>
+      <reference>
+        <reference value="ActorDefinition/server"/>
+      </reference>
+      <name value="ActorDefinition hosted in this project for use by obligations"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+          <resource>
+      <reference>
+        <reference value="StructureDefinition/patient-obligationtest"/>
+      </reference>
+      <name value="Patient Obligation Test Profile"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+   <!--<resource>
+      <reference>
+        <reference value="StructureDefinition/obligation"/>
+      </reference>
+      <name value="HL7 UV Tools Obligation Extension"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>-->
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+      <!-- <page>
+				<nameUrl value="allartifacts.html"/>
+				<title value="FHIR Artifacts"/>
+				<generation value="markdown"/> -->
+      <page>
+        <nameUrl value="artifacts.html"/>
+        <title value="Artifact List"/>
+        <generation value="html"/>
+      </page>
+      <!-- </page> -->
+    </page>
+    <parameter>
+      <code value="copyrightyear"/>
+      <value value="2021+"/>
+    </parameter>
+    <parameter>
+      <code value="apply-copyright"/>
+      <value value="false"/>
+    </parameter>
+    <parameter>
+      <code value="releaselabel"/>
+      <value value="CI Build"/>
+    </parameter>
+    <parameter>
+      <code value="find-other-resources"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="system-version"/>
+      <value value="terminology-settings.json"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>
