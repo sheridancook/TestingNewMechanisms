@@ -1,0 +1,203 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "patient-imposeProfileTarget",
+  "url" : "http://example.org/fhir/StructureDefinition/patient-imposeProfileTarget",
+  "name" : "PatientImposedProfile",
+  "title" : "Patient (ImposedProfile)",
+  "status" : "draft",
+  "experimental": false,
+  "description" : "This profile represents the constraints applied to the Patient for the purpose of testing its use as a target for the imposeProfile extension",
+  "fhirVersion" : "4.0.1",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Patient",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Patient.identifier",
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/tools/StructureDefinition/obligation",
+          "extension": [
+              {
+                  "url": "code",
+                  "valueCode": "can-send"
+              },
+              {
+                  "url": "actorId",
+                  "valueUri": "http://example.org/fhir/ActorDefinition/server"
+              }
+          ]
+        }
+       ],        
+        "path" : "Patient.identifier",
+        "slicing" : {
+          "discriminator" : [
+            {
+              "type" : "pattern",
+              "path" : "type"
+            }
+          ],
+          "rules" : "open"
+        }
+      },
+      {
+        "id" : "Patient.identifier.type",
+        "path" : "Patient.identifier.type",
+        "comment": "The slices provided below are examples of identifier types used by jurisdictions. These are not required, and the slicing is open meaning that other types can be provided and used in an implementation."
+      },
+      {
+        "id" : "Patient.identifier.system",
+        "path" : "Patient.identifier.system",
+        "min" : 1
+      },
+      {
+        "id" : "Patient.identifier.value",
+        "path" : "Patient.identifier.value",
+        "short" : "The value that is unique within the system.",
+        "min" : 1
+      },
+      {
+        "id" : "Patient.identifier:JHN",
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/tools/StructureDefinition/obligation",
+          "extension": [
+              {
+                  "url": "code",
+                  "valueCode": "can-send"
+              },
+              {
+                  "url": "actorId",
+                  "valueUri": "http://example.org/fhir/ActorDefinition/serverr"
+              }
+          ]
+        }
+       ],        
+        "path" : "Patient.identifier",
+        "sliceName" : "JHN",
+        "short" : "Jurisdictional Health Number",
+        "definition" : "Federal patient and person health numbers used by all jurisdictions across Canada",
+        "mapping" : [
+          {
+            "identity" : "P-CHDCF",
+            "map" : "Jurisdictional Health Care Number"
+          }
+        ]
+      },
+      {
+        "id" : "Patient.identifier:JHN.type",
+        "path" : "Patient.identifier.type",
+        "min" : 1,
+        "fixedCodeableConcept" : {
+          "coding" : [
+            {
+              "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code" : "JHN"
+            }
+          ]
+        }
+      },
+      {
+        "id" : "Patient.identifier:JHN.system",
+        "path" : "Patient.identifier.system",
+        "short" : "A Health Number Naming System from the Canadian URI Registry",
+        "mapping" : [
+          {
+            "identity" : "P-CHDCF",
+            "map" : "Jurisdiction Issuing Health Care Number"
+          }
+        ]
+      },
+      {
+        "id" : "Patient.identifier:JHN.value",
+        "path" : "Patient.identifier.value",
+        "min" : 1
+      },
+      {
+          "id": "Patient.identifier:MRN",
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/tools/StructureDefinition/obligation",
+          "extension": [
+              {
+                  "url": "code",
+                  "valueCode": "can-send"
+              },
+              {
+                  "url": "actorId",
+                  "valueUri": "http://example.org/fhir/ActorDefinition/server"
+              }
+          ]
+        }
+       ],          
+          "path": "Patient.identifier",
+          "sliceName": "MRN",
+          "short": "Medical Record Number",
+          "definition": "A local patient identifier from the submitting PoS System",
+          "comment": "Some jurisdictions may consider the MRN identifier type to be an alternative to the JHN identifier type under certain scenarios. These business rules are outside the scope of this profile, however the slice is socialized to prepare implementers for potential use of this pattern within certain jurisdictions",
+          "mapping" : [
+          {
+            "identity" : "P-CHDCF",
+            "map" : "Medical Record Number"
+          }
+        ]
+      },
+      {
+          "id": "Patient.identifier:MRN.type",
+          "path": "Patient.identifier.type",
+          "min": 1,
+          "fixedCodeableConcept": {
+              "coding":  [
+                  {
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code": "MR"
+                  }
+              ]
+          }
+      },
+      {
+          "id": "Patient.identifier:MRN.system",
+          "path": "Patient.identifier.system",
+          "short": "An identifier for the system supplying the MRN",
+          "min": 1
+      },
+      {
+          "id": "Patient.identifier:MRN.value",
+          "path": "Patient.identifier.value",
+          "min": 1
+      },      
+      {
+        "id" : "Patient.name",
+        "path" : "Patient.name",  
+        "extension": [
+         {
+          "url": "http://hl7.org/fhir/tools/StructureDefinition/obligation",
+          "extension": [
+              {
+                  "url": "code",
+                  "valueCode": "can-send"
+              },
+              {
+                  "url": "actorId",
+                  "valueUri": "http://example.org/fhir/ActorDefinition/server"
+              }
+          ]
+        }
+       ],
+        "min" : 1,
+         "constraint" : [
+          {
+            "key" : "name-pat-1",
+            "severity" : "error",
+            "human" : "Patient.name.given and Patient.name.family or Patient.name.text SHALL be present",
+            "expression" : "family.exists() and given.exists() or text.exists()",
+            "xpath" : "f:given and f:family or f:text"
+          }
+        ]
+      }
+    ]
+  }
+}
