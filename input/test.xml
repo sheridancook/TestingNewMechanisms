@@ -72,6 +72,22 @@
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
+      <resource>
+      <reference>
+        <reference value="StructureDefinition/patient-imposeProfileHost"/>
+      </reference>
+      <name value="Patient Profile with ImposeProfile Extension"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/patient-imposeProfileTarget"/>
+      </reference>
+      <name value="Patient Profile that is target of ImposeProfile extension"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource> 
    <!--<resource>
       <reference>
         <reference value="StructureDefinition/obligation"/>
@@ -80,6 +96,14 @@
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>-->
+    <resource>
+      <reference>
+        <reference value="Patient/patient-ImposeProfileTest"/>
+      </reference>
+      <name value="Patient ImposeProfile Example"/>
+      <exampleCanonical value="http://example.org/fhir/StructureDefinition/patient-imposeProfileHost"/>
+      <groupingId value="examples"/>
+    </resource>	  
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
