@@ -1,0 +1,47 @@
+{
+  "resourceType": "Patient",
+  "id": "patient-ImposeProfileTest",
+  "meta": {
+      "profile": [
+          "http://example.org/fhir/StructureDefinition/patient-imposeProfileHost"
+      ]
+  },
+  "identifier": [
+      {
+          "use": "usual",
+          "type": {
+              "coding": [
+                  {
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code": "MR"
+                  }
+              ]
+          },
+          "value": "654321"
+      },
+      {
+          "type": {
+              "coding": [
+                  {
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                      "code": "JHN"
+                  }
+              ]
+          },
+          "system": "https://fhir.infoway-inforoute.ca/NamingSystem/ca-on-patient-hcn",
+          "value": "5584486647"
+      }
+  ],
+  "active": true,
+  "name": [
+      {
+          "use": "official",
+          "family": "Donald",
+          "given": [
+              "Davidson"
+          ]
+      }
+  ],
+  "gender": "male",
+  "birthDate": "1960-03-11"
+}
