@@ -72,6 +72,14 @@
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/patient-obligationtest2"/>
+      </reference>
+      <name value="Patient Obligation Test 2 Profile for Testing new Definition"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>	  
       <resource>
       <reference>
         <reference value="StructureDefinition/patient-imposeProfileHost"/>
