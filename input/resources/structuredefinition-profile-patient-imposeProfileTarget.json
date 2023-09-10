@@ -6,7 +6,7 @@
   "title" : "Patient (ImposedProfile)",
   "status" : "draft",
   "experimental": false,
-  "description" : "This profile represents the constraints applied to the Patient for the purpose of testing its use as a target for the imposeProfile extension",
+  "description" : "This profile represents the constraints applied to the Patient for the purpose of testing its use as a target for the imposeProfile extension. It is intended to mimic a Patient Core profile which could be targeted for both constraints and obligations",
   "fhirVersion" : "4.0.1",
   "kind" : "resource",
   "abstract" : false,
@@ -19,15 +19,15 @@
         "id" : "Patient.identifier",
         "extension": [
          {
-          "url": "http://hl7.org/fhir/tools/StructureDefinition/obligation",
+          "url": "http://hl7.org/fhir/StructureDefinition/obligation",
           "extension": [
               {
                   "url": "code",
                   "valueCode": "can-send"
               },
               {
-                  "url": "actorId",
-                  "valueUri": "http://example.org/fhir/ActorDefinition/server"
+                  "url": "actor",
+                  "valueCanonical": "http://example.org/fhir/ActorDefinition/server"
               }
           ]
         }
@@ -63,15 +63,15 @@
         "id" : "Patient.identifier:JHN",
         "extension": [
          {
-          "url": "http://hl7.org/fhir/tools/StructureDefinition/obligation",
+          "url": "http://hl7.org/fhir/StructureDefinition/obligation",
           "extension": [
               {
                   "url": "code",
                   "valueCode": "can-send"
               },
               {
-                  "url": "actorId",
-                  "valueUri": "http://example.org/fhir/ActorDefinition/serverr"
+                  "url": "actor",
+                  "valueCanonical": "http://example.org/fhir/ActorDefinition/server"
               }
           ]
         }
@@ -120,15 +120,15 @@
           "id": "Patient.identifier:MRN",
         "extension": [
          {
-          "url": "http://hl7.org/fhir/tools/StructureDefinition/obligation",
+          "url": "http://hl7.org/fhir/StructureDefinition/obligation",
           "extension": [
               {
                   "url": "code",
                   "valueCode": "can-send"
               },
               {
-                  "url": "actorId",
-                  "valueUri": "http://example.org/fhir/ActorDefinition/server"
+                  "url": "actor",
+                  "valueCanonical": "http://example.org/fhir/ActorDefinition/server"
               }
           ]
         }
@@ -174,15 +174,15 @@
         "path" : "Patient.name",  
         "extension": [
          {
-          "url": "http://hl7.org/fhir/tools/StructureDefinition/obligation",
+          "url": "http://hl7.org/fhir/StructureDefinition/obligation",
           "extension": [
               {
                   "url": "code",
                   "valueCode": "can-send"
               },
               {
-                  "url": "actorId",
-                  "valueUri": "http://example.org/fhir/ActorDefinition/server"
+                  "url": "actor",
+                  "valueCanonical": "http://example.org/fhir/ActorDefinition/server"
               }
           ]
         }
