@@ -64,14 +64,22 @@
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource>
-          <resource>
+      <resource>
       <reference>
-        <reference value="StructureDefinition/patient-obligationtest"/>
+        <reference value="ActorDefinition/client"/>
       </reference>
-      <name value="Patient Obligation Test Profile"/>
+      <name value="ActorDefinition hosted in this project for use by obligations"/>
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
-    </resource>
+    </resource>	 
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/patient-ca-PS-summarized"/>
+      </reference>
+      <name value="Example UV-Derived Profile - Summarized Obligations"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="profiles"/>
+    </resource>		  
     <resource>
       <reference>
         <reference value="StructureDefinition/patient-obligationtest2"/>
@@ -96,14 +104,6 @@
       <exampleBoolean value="false"/>
       <groupingId value="profiles"/>
     </resource> 
-   <!--<resource>
-      <reference>
-        <reference value="StructureDefinition/obligation"/>
-      </reference>
-      <name value="HL7 UV Tools Obligation Extension"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>-->
     <resource>
       <reference>
         <reference value="Patient/patient-ImposeProfileTest"/>
